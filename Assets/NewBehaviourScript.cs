@@ -11,6 +11,8 @@ public class NewBehaviourScript : MonoBehaviour
     public Text zText;
     public AudioSource audioSource;
 
+    public GameObject go;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,21 +20,21 @@ public class NewBehaviourScript : MonoBehaviour
        
     }
 
-   public bool isInsideBounds(float mouseX, float mouseY, float xPos, float yPos,float width, float height) {
+   public bool isInsideBounds(float goX, float goY, float xPos, float yPos,float width, float height) {
 
-        return mouseX > xPos && mouseX <= xPos + width && mouseY > yPos && mouseY <= yPos + height;
+        return goX > xPos && goX <= xPos + width && goY > yPos && goY <= yPos + height;
     }
 
     // Update is called once per frame
     void Update()
     {
-       Vector3 mousePosition = Input.mousePosition; 
+       Vector3 goPosition = go.transform.position; 
 
        
 
 
-     float xPos = mousePosition.x;
-     float yPos = mousePosition.y;
+     float xPos = goPosition.x;
+     float yPos = goPosition.y;
 
 
         xText.text = "X: " + xPos;
